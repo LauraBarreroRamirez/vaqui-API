@@ -1,10 +1,10 @@
 import passport from "passport";
 import { ExtractJwt, Strategy } from "passport-jwt";
-import Service from "../services/users.service.js"
+import Service from "../services/users.service.js";
 
 const options = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-  secretOrKey: process.env.JWT_SECRET, // Replace with your JWT secret
+  secretOrKey: process.env.JWT_SECRET, // reemplaza tu JWT secreta
   passReqToCallback: true, //<= Important, so that the verify function can accept the req param ie verify(req,payload,done)
 };
 
