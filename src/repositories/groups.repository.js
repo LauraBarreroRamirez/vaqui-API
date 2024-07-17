@@ -36,6 +36,7 @@ const Repository = (dbClient) => {
       createdAt,
     ]);
     console.info(result);
+    console.log(name, color, ownerUserId, createdAt);
     return result.rows[0];
   };
 

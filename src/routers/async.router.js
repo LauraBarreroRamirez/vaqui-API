@@ -7,6 +7,7 @@ import {
 import groupRouter from "./groups.routers.js";
 import usersRouter from "./users.routers.js";
 import authRouter from "./auth.routers.js";
+import expenseRouter from "./expense.router.js";
 
 const AsyncRouter = () => {
   const router = Router();
@@ -16,6 +17,7 @@ const AsyncRouter = () => {
   router.use("/", groupRouter());
   router.use("/", usersRouter());
   router.use("/", authRouter());
+  router.use("/", expenseRouter());
   router.use(commitDatabase);
   router.use(rollbackDatabase);
   return router;

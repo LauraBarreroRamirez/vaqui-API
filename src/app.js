@@ -1,4 +1,3 @@
-//libreria que coge los datos del archivo de env para usarlo en la aplicacion manualmente
 import "dotenv/config";
 import express from "express";
 import cors from "cors";

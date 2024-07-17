@@ -8,14 +8,13 @@ const Controller = () => {
     const service = Service(req.dbClient);
 
     const user = await service.getByEmail(email);
-    console.log("user: ", user);
-    console.log("password: ", password);
+
     if (!user || !(await bcrypt.compare(password, user.password))) {
       return res.status(401).json({ message: "Invalid authorization" });
     }
     const payload = { id: user.id };
     const token = jsonWebToken.sign(payload, process.env.JWT_SECRET);
-    res.status(200).json(token);
+    res.status(200).json({ token, user });
   };
   return {
     login,

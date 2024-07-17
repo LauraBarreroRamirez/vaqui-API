@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
 
+
 const GET_ALL = `SELECT id, name, email, password FROM users`;
 const GET_BY_ID = `${GET_ALL} WHERE id= $1`;
 const GET_BY_EMAIL = `${GET_ALL} WHERE email= $1`;
